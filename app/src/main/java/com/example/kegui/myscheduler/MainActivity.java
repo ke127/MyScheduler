@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import io.realm.Realm;
@@ -38,6 +39,16 @@ public class MainActivity extends AppCompatActivity {
         RealmResults<Schedule> schedules = mRealm.where(Schedule.class).findAll();
         ScheduleAdapter adapter = new ScheduleAdapter(schedules);
         mListView.setAdapter(adapter);
+
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Schedule schedule = (Schedule)parent.getItemAtPosition(position);
+                startActivity(new Intent(MainActivity.this,
+                        ScheduleEditActivity.class)
+                        .putExtra("schedule_id", schedule.getId()));
+            }
+        });
     }
 
     @Override

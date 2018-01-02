@@ -14,7 +14,7 @@ public class MySchedulerApplication extends Application {
     public void onCreate() {
         super.onCreate();
         Realm.init(this);
-        RealmConfiguration realmConfig = RealmConfiguration.Builder().build();
+        RealmConfiguration realmConfig = new RealmConfiguration.Builder().build();
         Realm.setDefaultConfiguration(realmConfig);
     }
 }

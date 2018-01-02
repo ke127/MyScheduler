@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/dateEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
@@ -37,7 +37,7 @@
         android:text="@string/title"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/dateEdit" />
 
     <EditText
         android:id="@+id/titleEdit"
@@ -87,6 +87,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:layout_marginLeft="16dp"
+        android:onClick="onSaveTapped"
         android:text="@string/preserve"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />
@@ -98,6 +99,7 @@
         android:layout_marginBottom="16dp"
         android:layout_marginLeft="280dp"
         android:backgroundTint="@color/deleteButton"
+        android:onClick="onDeleteTapped"
         android:text="@string/delete"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />
